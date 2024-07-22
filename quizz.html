@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <style>
+        body {
+            font-family:'Times New Roman', Times, serif;
+            width: 700px;
+            margin: auto; 
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .quiz-container {
+            background-color:pink;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border:5px solid black;
+        }
+
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #eee;
+            margin: 5px 0;
+            padding: 20px;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+
+        .correct {
+            background: green;
+            color: white;
+        }
+
+        .wrong {
+            background: red;
+            color: white;
+        }
+
+        .answer {
+            font-weight: bold;
+            font-size:20px;
+            background-color:rgb(235, 180, 112);
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>QUIZ</h1>
+
+        <div class="question" id="question1">
+            <h2>1. In web design, what does CSS stand for?</h2>
+            <ul>
+                <li id="q1a" onclick="checkAnswer('q1a', 'q1d')">A. Counter Strike Source</li>
+                <li id="q1b" onclick="checkAnswer('q1b', 'q1d')">B. Corrective Style Sheet</li>
+                <li id="q1c" onclick="checkAnswer('q1c', 'q1d')">C. Computer Style Sheet</li>
+                <li id="q1d" onclick="checkAnswer('q1d', 'q1d')">D. Cascading Style Sheet</li>
+            </ul>
+        </div>
+
+    
+        <div class="question" id="question2">
+            <h2>2. What is the capital of India?</h2>
+            <ul>
+                <li id="q2a" onclick="checkAnswer('q2a', 'q2a')">A. Delhi</li>
+                <li id="q2b" onclick="checkAnswer('q2b', 'q2a')">B. Mumbai</li>
+                <li id="q2c" onclick="checkAnswer('q2c', 'q2a')">C. Hyderabad</li>
+                <li id="q2d" onclick="checkAnswer('q2d', 'q2a')">D. New Delhi</li>
+            </ul>
+        </div>
+
+        <div class="question" id="question3">
+            <h2>3. Which planet is known as the Red Planet?</h2>
+            <ul>
+                <li id="q3a" onclick="checkAnswer('q3a', 'q3b')">A. Venus</li>
+                <li id="q3b" onclick="checkAnswer('q3b', 'q3b')">B. Mars</li>
+                <li id="q3c" onclick="checkAnswer('q3c', 'q3b')">C. Jupiter</li>
+                <li id="q3d" onclick="checkAnswer('q3d', 'q3b')">D. Saturn</li>
+            </ul>
+        </div>
+
+    
+        <div class="question" id="question4">
+            <h2>4. Who painted the Mona Lisa?</h2>
+            <ul>
+                <li id="q4a" onclick="checkAnswer('q4a', 'q4b')">A. Michelangelo</li>
+                <li id="q4b" onclick="checkAnswer('q4b', 'q4b')">B. Leonardo da Vinci</li>
+                <li id="q4c" onclick="checkAnswer('q4c', 'q4b')">C. Vincent van Gogh</li>
+                <li id="q4d" onclick="checkAnswer('q4d', 'q4b')">D. Pablo Picasso</li>
+            </ul>
+        </div>
+
+    
+        <div class="question" id="question5">
+            <h2>5. What is the largest ocean on Earth?</h2>
+            <ul>
+                <li id="q5a" onclick="checkAnswer('q5a', 'q5d')">A. Atlantic Ocean</li>
+                <li id="q5b" onclick="checkAnswer('q5b', 'q5d')">B. Indian Ocean</li>
+                <li id="q5c" onclick="checkAnswer('q5c', 'q5d')">C. Southern Ocean</li>
+                <li id="q5d" onclick="checkAnswer('q5d', 'q5d')">D. Pacific Ocean</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function checkAnswer(selectedOption, correctOption) {
+            const selectedElement = document.getElementById(selectedOption);
+            const correctElement = document.getElementById(correctOption);
+
+            if (selectedOption === correctOption) {
+                selectedElement.classList.add('correct');
+            } else {
+                selectedElement.classList.add('wrong');
+                correctElement.classList.add('answer');
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
